@@ -1,0 +1,230 @@
+:root {
+    --btn-size-desktop: 180px;
+    --btn-size-mobile: 110px;
+}
+
+/* =====================
+   RESET
+   ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =====================
+   BODY
+   ===================== */
+body {
+    font-family: system-ui, sans-serif;
+    background: #2e2e2e;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+}
+
+/* =====================
+   CONTAINER
+   ===================== */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    padding: 40px 20px 120px;
+    position: relative;
+}
+
+/* =====================
+   TITLE
+   ===================== */
+.main-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-title span {
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    background: linear-gradient(90deg,
+        #ff3b3b,
+        #ff006a,
+        #b400ff,
+        #6a00ff,
+        #b400ff,
+        #ff006a,
+        #ff3b3b
+    );
+    background-size: 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 6s linear infinite;
+}
+
+@keyframes gradientFlow {
+    from { background-position: 0% 50%; }
+    to   { background-position: 100% 50%; }
+}
+
+/* =====================
+   ABOUT
+   ===================== */
+.about {
+    background: #3a3a3a;
+    border-radius: 20px;
+    padding: 20px 24px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* =====================
+   MEMBERS
+   ===================== */
+.members-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.member-info {
+    padding: 14px 16px;
+}
+
+.member-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.member-date {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.member-bio {
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.member-card {
+    background: #303030;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 26px rgba(0,0,0,0.3);
+}
+
+.member-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* =====================
+   SOCIAL IMAGES (ПК)
+   ===================== */
+.nashtt,
+.nashtgk {
+    position: fixed;
+    width: 260px;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+.nashtt {
+    left: 40px;
+    top: 35%;
+}
+
+.nashtgk {
+    right: 40px;
+    top: 35%;
+}
+
+.nashtt:hover,
+.nashtgk:hover {
+    transform: scale(1.05);
+}
+
+/* =====================
+   FIXED BUTTONS
+   ===================== */
+.www_ip,
+.www_ipt {
+    position: fixed;
+    width: var(--btn-size-desktop);
+    height: var(--btn-size-desktop);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 26px rgba(0,0,0,0.35);
+    z-index: 9999;
+}
+
+.www_ip {
+    right: 40px;
+    bottom: 240px;
+}
+
+.www_ipt {
+    right: 40px;
+    bottom: 40px;
+}
+
+.site_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tiktok,
+.tg {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* =====================
+   MOBILE
+   ===================== */
+@media (max-width: 700px) {
+
+    .main-title span {
+        font-size: 28px;
+    }
+
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* скрываем большие картинки */
+    .nashtt,
+    .nashtgk {
+        display: none;
+    }
+
+    .www_ip,
+    .www_ipt {
+        width: var(--btn-size-mobile);
+        height: var(--btn-size-mobile);
+        right: 20px;
+    }
+
+    .www_ip {
+        bottom: 150px;
+    }
+
+    .www_ipt {
+        bottom: 20px;
+    }
+}
