@@ -715,3 +715,239 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* =====================
+   CARD QUOTE (на головній)
+   ===================== */
+.card-quote {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.5;
+    position: relative;
+}
+
+.cq-mark {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    line-height: 0;
+    vertical-align: -6px;
+    color: var(--accent2);
+    opacity: 0.5;
+    margin-right: 2px;
+}
+
+/* =====================
+   MEMBER QUOTE (профіль)
+   ===================== */
+.member-quote {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px 20px;
+    position: relative;
+    margin-top: 16px;
+    overflow: hidden;
+}
+
+.member-quote .mq-bar {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent), var(--accent2));
+}
+
+.member-quote .mq-bigquote {
+    font-family: Georgia, serif;
+    font-size: 52px;
+    line-height: 0.8;
+    color: var(--accent2);
+    opacity: 0.2;
+    margin-bottom: 4px;
+    user-select: none;
+    display: block;
+}
+
+.member-quote .mq-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #cccce0;
+    font-style: italic;
+    margin: 0 0 16px;
+}
+
+.member-quote .mq-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+}
+
+.member-quote .mq-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 11px; font-weight: 700;
+    color: var(--accent2);
+    flex-shrink: 0;
+}
+
+.member-quote .mq-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.member-quote .mq-role {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* =====================
+   FOUNDER CARD (hero)
+   ===================== */
+.founder-card {
+    display: flex;
+    gap: 0;
+    background: var(--card);
+    border: 1px solid rgba(255,59,107,0.25);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 24px;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    min-height: 260px;
+}
+
+.founder-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+    z-index: 2;
+}
+
+.founder-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 32px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,59,107,0.4);
+    border-color: rgba(255,59,107,0.45);
+}
+
+.founder-photo-wrap {
+    width: 340px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.founder-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+
+.founder-card:hover .founder-photo {
+    transform: scale(1.06);
+}
+
+.founder-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 60%, var(--card) 100%);
+}
+
+.founder-info {
+    flex: 1;
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.founder-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fbbf24;
+    background: rgba(251,191,36,0.1);
+    border: 1px solid rgba(251,191,36,0.2);
+    border-radius: 100px;
+    padding: 4px 14px;
+    width: fit-content;
+}
+
+.founder-name {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--text);
+}
+
+.founder-date {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.founder-quote {
+    margin-top: 6px;
+    padding: 14px 16px;
+    background: var(--bg3);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    font-size: 14px;
+    font-style: italic;
+    color: #cccce0;
+    line-height: 1.7;
+}
+
+.founder-link {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+    transition: gap 0.2s;
+}
+
+.founder-card:hover .founder-link {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .founder-card {
+        flex-direction: column;
+        min-height: unset;
+    }
+    .founder-photo-wrap {
+        width: 100%;
+        height: 220px;
+    }
+    .founder-overlay {
+        background: linear-gradient(to top, var(--card) 0%, transparent 60%);
+    }
+    .founder-info {
+        padding: 20px 20px 24px;
+    }
+    .founder-name {
+        font-size: 22px;
+    }
+}
